@@ -5,11 +5,9 @@ import time
 from geometry_msgs.msg import Twist
 
 
-
 def time_vel(start_time):
 
     duration = time.time() - start_time
-    rospy.loginfo(duration)
 
     if duration < 10:
         control_linear_vel = 0
@@ -22,18 +20,19 @@ def time_vel(start_time):
     elif duration >= 40 and duration < 100:
         control_linear_vel = -0.03
         control_angular_vel = 0
-	
-    elif duration >=100 and duration <130:
-	      control_linear_vel = 0.03
+
+    elif duration >= 100 and duration < 130:
+        control_linear_vel = 0.03
         control_angular_vel = 0
-    
-    elif duration >=130 and duration <140:
-	      control_linear_vel = 0
-        control_angular_vel = 0
-    
-    elif duration >=140 and duration <150:
+
+    elif duration >= 130 and duration <140:
         control_linear_vel = 0
-	      control_angular_vel = 0.15708
+        control_angular_vel = 0
+	
+    
+    elif duration >= 140 and duration <150:
+        control_linear_vel = 0
+        control_angular_vel = 0.15708
 
     elif duration >= 150 and duration < 180:
         control_linear_vel = 0.03
@@ -46,14 +45,14 @@ def time_vel(start_time):
     elif duration >= 240 and duration < 270:
         control_linear_vel = 0.03
         control_angular_vel = 0
-
-    elif duration >= 280 and duration < 290:
+    
+    elif duration >= 270 and duration < 280:
         control_linear_vel = 0
-        control_angular_vel = -0.15708
+        control_angular_vel = 0
 
     elif duration >= 290 and duration < 300:
         control_linear_vel = 0
-        control_angular_vel = 0
+        control_angular_vel = -0.15708
 
     else :
         control_linear_vel = 0
@@ -62,8 +61,8 @@ def time_vel(start_time):
     return control_linear_vel, control_angular_vel
 
 
-
 if __name__=="__main__":
+
 
     rospy.init_node('set_vel')
 
@@ -88,3 +87,5 @@ if __name__=="__main__":
         rate.sleep()
 
     rospy.spin()
+
+    
