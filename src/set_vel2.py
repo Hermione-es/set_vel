@@ -3,9 +3,6 @@
 import rospy
 import math
 
-
-
-
 import time
 from geometry_msgs.msg import Twist
 
@@ -45,10 +42,6 @@ def time_vel(start_time):
     elif duration >= 235 and duration < 305:
         control_linear_vel = 0.0448798951 # radius*2*pi/time
         control_angular_vel = -0.0897597901 # 2*pi/time
-
-    elif duration >= 305 and duration < 315:
-        control_linear_vel = 0
-        control_angular_vel = 0.15708
 
     else :
         control_linear_vel = 0
