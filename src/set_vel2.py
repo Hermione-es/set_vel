@@ -20,7 +20,7 @@ def time_vel(start_time):
 
     elif duration >= 10 and duration < 150:
         control_linear_vel = 0.0224399475
-        control_angular_vel = 0.0074*math.PI
+        control_angular_vel = 0.0074*math.pi
 
     elif duration >= 150 and duration < 155:
         control_linear_vel = 0
@@ -28,7 +28,7 @@ def time_vel(start_time):
 
     elif duration >= 155 and duration <295:
         control_linear_vel = 0.0224399475
-        control_angular_vel = -0.0074*math.PI
+        control_angular_vel = -0.0074*math.pi
 
     elif duration >= 295 and duration <300:
         control_linear_vel = 0
