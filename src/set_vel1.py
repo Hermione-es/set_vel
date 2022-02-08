@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#linear drive(translation)
 import rospy
 import time
 from geometry_msgs.msg import Twist
@@ -13,7 +13,7 @@ def time_vel(start_time):
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration < 40:
+    elif duration >= 10 and duration < 40:
         control_linear_vel = 0.03
         control_angular_vel = 0
 
@@ -25,14 +25,17 @@ def time_vel(start_time):
         control_linear_vel = 0.03
         control_angular_vel = 0
 
-    elif duration >= 130 and duration <140:
+    elif duration >= 130 and duration < 135:
         control_linear_vel = 0
         control_angular_vel = 0
-	
     
-    elif duration >= 140 and duration <150:
+    elif duration >= 135 and duration < 145:
         control_linear_vel = 0
         control_angular_vel = 0.15708
+
+    elif duration >= 145 and duration < 150:
+        control_linear_vel = 0
+        control_angular_vel = 0
 
     elif duration >= 150 and duration < 180:
         control_linear_vel = 0.03
@@ -46,11 +49,11 @@ def time_vel(start_time):
         control_linear_vel = 0.03
         control_angular_vel = 0
     
-    elif duration >= 270 and duration < 280:
+    elif duration >= 270 and duration < 275:
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 290 and duration < 300:
+    elif duration >= 275 and duration < 285:
         control_linear_vel = 0
         control_angular_vel = -0.15708
 
@@ -61,8 +64,8 @@ def time_vel(start_time):
     return control_linear_vel, control_angular_vel
 
 
-if __name__=="__main__":
 
+if __name__=="__main__":
 
     rospy.init_node('set_vel')
 
@@ -85,7 +88,3 @@ if __name__=="__main__":
         pub.publish(twist)
 
         rate.sleep()
-
-    rospy.spin()
-
-    
