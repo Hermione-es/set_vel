@@ -1,6 +1,11 @@
 #!/usr/bin/env python
-
+#rotation drive
 import rospy
+import math
+
+
+
+
 import time
 from geometry_msgs.msg import Twist
 
@@ -13,33 +18,25 @@ def time_vel(start_time):
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration < 15:
-        control_linear_vel = 0
-        control_angular_vel = 0.0074
-
-    elif duration >= 15 and duration < 150:
-        control_linear_vel = 0.023271
-        control_angular_vel = 0.0074
+    elif duration >= 10 and duration < 150:
+        control_linear_vel = 0.0224399475
+        control_angular_vel = 0.0074*math.PI
 
     elif duration >= 150 and duration < 155:
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 155 and duration <165:
-        control_linear_vel = 0
-        control_angular_vel = -0.0074
-    
-    elif duration >= 165 and duration <300:
-        control_linear_vel = 0.023271
-        control_angular_vel = -0.0074
+    elif duration >= 155 and duration <295:
+        control_linear_vel = 0.0224399475
+        control_angular_vel = -0.0074*math.PI
 
-    elif duration >= 300 and duration <305:
+    elif duration >= 295 and duration <300:
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 305 and duration < 310:
+    elif duration >= 300 and duration <310:
         control_linear_vel = 0
-        control_angular_vel = 0.0074
+        control_angular_vel = 0.15708
 
     else :
         control_linear_vel = 0
