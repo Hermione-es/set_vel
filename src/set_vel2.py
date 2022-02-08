@@ -18,23 +18,35 @@ def time_vel(start_time):
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 10 and duration < 150:
-        control_linear_vel = 0.0224399475
-        control_angular_vel = 0.0074*math.pi
+    elif duration >= 10 and duration < 80:
+        control_linear_vel = 0.0448798951 # radius*2*pi/time
+        control_angular_vel = 0.0897597901 # 2*pi/time
 
-    elif duration >= 150 and duration < 155:
+    elif duration >= 80 and duration < 85:
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 155 and duration <295:
-        control_linear_vel = 0.0224399475
-        control_angular_vel = -0.0074*math.pi
+    elif duration >= 85 and duration < 155:
+        control_linear_vel = 0.0448798951 # radius*2*pi/time
+        control_angular_vel = -0.0897597901 # 2*pi/time
 
-    elif duration >= 295 and duration <300:
+    elif duration >= 155 and duration <160:
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 300 and duration <310:
+    elif duration >= 160 and duration < 230:
+        control_linear_vel = 0.0448798951 # radius*2*pi/time
+        control_angular_vel = 0.0897597901 # 2*pi/time
+
+    elif duration >= 230 and duration < 235:
+        control_linear_vel = 0
+        control_angular_vel = 0
+
+    elif duration >= 235 and duration < 305:
+        control_linear_vel = 0.0448798951 # radius*2*pi/time
+        control_angular_vel = -0.0897597901 # 2*pi/time
+
+    elif duration >= 305 and duration < 315:
         control_linear_vel = 0
         control_angular_vel = 0.15708
 
