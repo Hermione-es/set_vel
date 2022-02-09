@@ -7,53 +7,54 @@ from geometry_msgs.msg import Twist
 
 def time_vel(start_time):
 
-    duration = time.time() - start_time
+    current_time =  rospy.Time.now()
+    dt = current_time - start_time
 
-    if duration < 10:
+    if dt.to_sec() < 10:
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 10 and duration < 40:
+    elif dt.to_sec() >= 10 and dt.to_sec() < 40:
         control_linear_vel = 0.03
         control_angular_vel = 0
 
-    elif duration >= 40 and duration < 100:
+    elif dt.to_sec() >= 40 and dt.to_sec() < 100:
         control_linear_vel = -0.03
         control_angular_vel = 0
 
-    elif duration >= 100 and duration < 130:
+    elif dt.to_sec() >= 100 and dt.to_sec() < 130:
         control_linear_vel = 0.03
         control_angular_vel = 0
 
-    elif duration >= 130 and duration < 135:
+    elif dt.to_sec() >= 130 and dt.to_sec() < 135:
         control_linear_vel = 0
         control_angular_vel = 0
     
-    elif duration >= 135 and duration < 145:
+    elif dt.to_sec() >= 135 and dt.to_sec() < 145:
         control_linear_vel = 0
         control_angular_vel = 0.15708
 
-    elif duration >= 145 and duration < 150:
+    elif dt.to_sec() >= 145 and dt.to_sec() < 150:
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 150 and duration < 180:
+    elif dt.to_sec() >= 150 and dt.to_sec() < 180:
         control_linear_vel = 0.03
         control_angular_vel = 0
 
-    elif duration >= 180 and duration < 240:
+    elif dt.to_sec() >= 180 and dt.to_sec() < 240:
         control_linear_vel = -0.03
         control_angular_vel = 0
         
-    elif duration >= 240 and duration < 270:
+    elif dt.to_sec() >= 240 and dt.to_sec() < 270:
         control_linear_vel = 0.03
         control_angular_vel = 0
     
-    elif duration >= 270 and duration < 275:
+    elif dt.to_sec() >= 270 and dt.to_sec() < 275:
         control_linear_vel = 0
         control_angular_vel = 0
 
-    elif duration >= 275 and duration < 285:
+    elif dt.to_sec() >= 275 and dt.to_sec() < 285:
         control_linear_vel = 0
         control_angular_vel = -0.15708
 
@@ -69,12 +70,12 @@ if __name__=="__main__":
 
     rospy.init_node('set_vel')
 
-    pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+    pub = rospy.Publisher('cmd_vel', Twist, queue_size=3)
 
     twist = Twist()
 
-    start_time = time.time()
-    rate = rospy.Rate(10) # 10hz
+    start_time =  rospy.Time.now()
+    rate = rospy.Rate(50) # 10hz
 
     while not rospy.is_shutdown():
         linear_vel, angular_vel = time_vel(start_time)
