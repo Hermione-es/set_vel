@@ -15,6 +15,7 @@ def time_vel(start_time):
         control_angular_vel = 0
     
     elif dt.to_sec() >= 10 and dt.to_sec() < 15:
+        control_linear_vel = 0
         control_angular_vel = 0.08377580410
 
     elif dt.to_sec() >= 15 and dt.to_sec() < 85:
@@ -37,6 +38,7 @@ def time_vel(start_time):
         control_angular_vel = 0
     
     elif dt.to_sec() >= 170 and dt.to_sec() < 175:
+        control_linear_vel = 0
         control_angular_vel = 0.08377580410
 
     elif dt.to_sec() >= 175 and dt.to_sec() < 245:
@@ -48,6 +50,7 @@ def time_vel(start_time):
         control_angular_vel = 0
     
     elif dt.to_sec() >= 250 and dt.to_sec() < 255:
+        control_linear_vel = 0
         control_angular_vel = -0.08377580410
 
     elif dt.to_sec() >= 255 and dt.to_sec() < 325:
