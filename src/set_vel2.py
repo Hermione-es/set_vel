@@ -16,22 +16,22 @@ def time_vel(start_time):
     
     elif dt.to_sec() >= 10 and dt.to_sec() < 15:
         control_linear_vel = 0
-        control_angular_vel = 0.08377580410
+        control_angular_vel = 0.0897597901
 
     elif dt.to_sec() >= 15 and dt.to_sec() < 85:
         control_linear_vel = 0.0448798951 # radius*2*pi/time
-        control_angular_vel = 0.08377580410 # 2*pi/time
+        control_angular_vel = 0.0897597901 # 2*pi/time
 
     elif dt.to_sec() >= 85 and dt.to_sec() < 90:
         control_linear_vel = 0
         control_angular_vel = 0
 
     elif dt.to_sec() >= 90 and dt.to_sec() < 95:
-        control_angular_vel = -0.08377580410
+        control_angular_vel = -0.0897597901
 
     elif dt.to_sec() >= 95 and dt.to_sec() < 165:
         control_linear_vel = 0.0448798951 # radius*2*pi/time
-        control_angular_vel = -0.08377580410 # 2*pi/time
+        control_angular_vel = -0.0897597901 # 2*pi/time
 
     elif dt.to_sec() >= 165 and dt.to_sec() <170:
         control_linear_vel = 0
@@ -39,11 +39,11 @@ def time_vel(start_time):
     
     elif dt.to_sec() >= 170 and dt.to_sec() < 175:
         control_linear_vel = 0
-        control_angular_vel = 0.08377580410
+        control_angular_vel = 0.0897597901
 
     elif dt.to_sec() >= 175 and dt.to_sec() < 245:
         control_linear_vel = 0.0448798951 # radius*2*pi/time
-        control_angular_vel = 0.08377580410 # 2*pi/time
+        control_angular_vel = 0.0897597901 # 2*pi/time
 
     elif dt.to_sec() >= 245 and dt.to_sec() < 250:
         control_linear_vel = 0
@@ -51,7 +51,7 @@ def time_vel(start_time):
     
     elif dt.to_sec() >= 250 and dt.to_sec() < 255:
         control_linear_vel = 0
-        control_angular_vel = -0.08377580410
+        control_angular_vel = -0.0897597901
 
     elif dt.to_sec() >= 255 and dt.to_sec() < 325:
         control_linear_vel = 0.0448798951 # radius*2*pi/time
