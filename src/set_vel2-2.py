@@ -16,7 +16,7 @@ def time_vel(start_time):
 
     elif dt.to_sec() >= 10 and dt.to_sec() < 80:
         control_linear_vel = 0.04487989505  # radius*2*pi/time
-        control_angular_vel = 0.09487889505 # 2*pi/time
+        control_angular_vel = 0.089579790102566 # 2*pi/time
 
     elif dt.to_sec() >= 80 and dt.to_sec() < 95:
         control_linear_vel = 0
@@ -24,7 +24,7 @@ def time_vel(start_time):
 
     elif dt.to_sec() >= 95 and dt.to_sec() < 165:
         control_linear_vel = 0.04487989505  # radius*2*pi/time
-        control_angular_vel = -0.09487889505 # 2*pi/time
+        control_angular_vel = -0.089579790102566 # 2*pi/time
 
     else :
         control_linear_vel = 0
